@@ -19,7 +19,7 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
  [x] Add tailwindcss for styling
  [x] Create basic page/component structure
  [x] Implement `<AlbumThumbnail>`
- [ ] Add swr for data caching/de-duplication
+ [x] Add swr for caching/data-depulication of fetched data
  [ ] Create `useTop100Chart` swr hook and use it
  [ ] Implement /album/:id page
  [ ] Create `useAlbum` swr hook and use it
