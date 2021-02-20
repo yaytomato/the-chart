@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Objective
 
-## Getting Started
+Create a website that displays Top 100 albums chart in a modern and sleek manner.
 
-First, run the development server:
+### Design references
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+* [Color theme reference](https://www.behance.net/gallery/110856055/Florensans-Typeface?tracking_source=search_projects_recommended%7Cmodern)
+* Main colors: white(#fefcfe), gray(#beb9bc), mint(#739c8f)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# To-dos
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+ [x] Analyse JSON api structure
+ [x] Draw out simple layout mockups
+ [x] Pick a design concept
+ [x] List out to-dos
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ [x] Create next app
+ [ ] Add tsconfig
+ [ ] Add tailwindcss for styling
+ [ ] Create basic page/component structure
+ [ ] Implement `<AlbumThumbnail>`
+ [ ] Add swr for data caching/de-duplication
+ [ ] Create `useTop100Chart` swr hook and use it
+ [ ] Implement /album/:id page
+ [ ] Create `useAlbum` swr hook and use it
+ [ ] Implement filtering
+ [ ] Implement searching
+ [ ] Implement navbar
