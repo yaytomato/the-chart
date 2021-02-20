@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import NavBar from "../../components/NavBar";
+
 import { useAlbum } from "../../api/album";
 
 export const getServerSideProps = async (context) => {
@@ -22,9 +24,7 @@ export const Album: React.FC<Props> = ({ rank }) => {
 
   return (
     <div>
-      <Link href="/">
-        <a>← 차트 보기</a>
-      </Link>
+      <NavBar toChart />
       <div className="flex">
         <img src={album.coverArt} alt={album.title} />
         <div>

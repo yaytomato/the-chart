@@ -10,8 +10,8 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
 # To-dos
 
  [x] Analyse JSON api structure
- [x] Draw out simple layout mockups
- [x] Pick a design concept
+ [x] Draw out simple layout mockups (in paper)
+ [x] Decide on a design concept/color theme
  [x] List out to-dos
 
  [x] Create next app
@@ -26,9 +26,13 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
  [x] Create `useAlbum(rank)` swr hook and use it
  [x] Implement several sort options
  [x] Implement searching
- [ ] Implement navbar
+ [x] Implement navbar
 
  [ ] Make container responsive
+ [ ] Apply style to <Top100Chart>
+ [ ] Apply style to <AlbumThumbnail>
+ [ ] Apply style to <SortOption>
+ [ ] Apply style to <SearchBar>
 
 # Used libraries
 
