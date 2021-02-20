@@ -23,7 +23,7 @@ export const Album: React.FC<Props> = ({ rank }) => {
   if (isLoading || isError) return null;
 
   return (
-    <div>
+    <div className="responsive-container">
       <NavBar toChart />
       <div className="flex">
         <img src={album.coverArt} alt={album.title} />

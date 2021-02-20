@@ -18,7 +18,7 @@ export const Home = () => {
   if (isLoading || isError) return null;
 
   return (
-    <div>
+    <div className="responsive-container">
       <NavBar />
       <div className="flex">
         <SortOption chart={chart} setSortedChart={setSortedChart} />
