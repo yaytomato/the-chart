@@ -25,7 +25,7 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
  [x] Implement /albums/[rank] page
  [x] Create `useAlbum(rank)` swr hook and use it
  [x] Implement several sort options
- [ ] Implement searching
+ [x] Implement searching
  [ ] Implement navbar
 
  [ ] Make container responsive

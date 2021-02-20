@@ -51,44 +51,65 @@ const SortOption = ({ chart, setSortedChart }) => {
   );
 };
 
-const Top100Chart = ({ chart }) => {
-  const [sortedChart, setSortedChart] = useState(chart);
+const SearchBar = ({ keyword, setKeyword }) => (
+  <input
+    type="text"
+    placeholder="앨범명을 검색하세요"
+    value={keyword}
+    onChange={(e) => setKeyword(e.target.value)}
+  />
+);
 
+const AlbumThumbnailList = ({ list }) => (
+  <div className="grid grid-cols-4">
+    {list.map((album) => (
+      <AlbumThumbnail key={album.rank} album={album} />
+    ))}
+  </div>
+);
+
+const Top100Chart = ({ chart }) => {
   return (
     <React.Fragment>
       <p>Top 100 Chart</p>
-      <div className="flex">
-        <SortOption chart={chart} setSortedChart={setSortedChart} />
-        <div>search bar</div>
-      </div>
 
-      <div className="grid grid-cols-4">
-        {sortedChart.map((album) => (
-          <AlbumThumbnail key={album.rank} album={album} />
-        ))}
-      </div>
+      <AlbumThumbnailList list={chart} />
     </React.Fragment>
   );
 };
 
-const SearchResult = ({ searched }) => <div>search result</div>;
+const SearchResult = ({ searched }) => {
+  if (searched.length) {
+    return <AlbumThumbnailList list={searched} />;
+  }
+
+  return <div>일치하는 앨범이 없습니다. 오타는 없었나요?</div>;
+};
 
 export const Home = () => {
   const { chart, isLoading, isError } = useTop100Chart();
 
+  const [sortedChart, setSortedChart] = useState(chart);
   const [keyword, setKeyword] = useState("");
-  const [searched, setSearched] = useState([]);
 
   if (isLoading || isError) return null;
 
   return (
     <div>
       <NavBar />
+      <div className="flex">
+        <SortOption chart={chart} setSortedChart={setSortedChart} />
+        <SearchBar keyword={keyword} setKeyword={setKeyword} />
+      </div>
 
       {keyword.length ? (
-        <SearchResult searched={searched} />
+        <SearchResult
+          searched={sortedChart.filter((album) =>
+            album.title.includes(keyword)
+          )}
+        />
       ) : (
-        <Top100Chart chart={chart} />
+        <Top100Chart chart={sortedChart} />
       )}
     </div>
   );
