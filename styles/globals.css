@@ -13,7 +13,7 @@ body {
 }
 
 .heading {
-    @apply font-monoton text-6xl md:text-8xl text-white;
+    @apply font-monoton text-6xl md:text-8xl text-white mt-4 mb-8;
 }
 
 @tailwind utilities;
