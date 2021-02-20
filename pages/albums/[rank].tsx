@@ -1,29 +1,24 @@
-import React, { useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
-interface Props {}
+import { useAlbum } from "../../api/album";
 
-export const Album: React.FC<Props> = ({}) => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  // temp dummy data
-  const [album, setAlbum] = useState({
-    rank: 1,
-    title: "25",
-    artist: {
-      name: "Adele",
-      link: "https://github.com",
+export const getServerSideProps = async (context) => {
+  const { rank } = context.query;
+  return {
+    props: {
+      rank,
     },
-    trackCount: 5,
-    genre: "Country",
-    releaseDate: "2021/02/20",
-    publisher: "Awesome Music Company",
-    price: "$5",
-    coverArt:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5b/9b/bf/5b9bbf44-dc8a-9ee2-7e5c-42723a00fd74/21BMR0002226.rgb.jpg/170x170bb.png",
-  });
+  };
+};
+
+interface Props {
+  rank: string;
+}
+
+export const Album: React.FC<Props> = ({ rank }) => {
+  const { album, isLoading, isError } = useAlbum(rank);
+
+  if (isLoading || isError) return null;
 
   return (
     <div>

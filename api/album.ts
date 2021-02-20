@@ -3,41 +3,62 @@ import useSWR from "swr";
 
 const get = (url) => axios.get(url).then((res) => res.data);
 
+const formatRawAlbumData = (rawData, rank) => {
+  return {
+    rank,
+    title: rawData["im:name"].label,
+    artist: {
+      name: rawData["im:artist"].label,
+      link: rawData["im:artist"].attributes?.href,
+    },
+    trackCount: rawData["im:itemCount"].label,
+    genre: rawData.category.attributes.label,
+    releaseDate: rawData["im:releaseDate"].label,
+    publisher: rawData.rights.label,
+    price: rawData["im:price"].label,
+    coverArt: rawData["im:image"][2].label,
+  };
+};
+
 export const useTop100Chart = () => {
   const { data, error } = useSWR(
     `https://itunes.apple.com/us/rss/topalbums/limit=100/json`,
     get
   );
 
-  // format raw data
   const chart = [];
-  let albumRaw;
-  let albumProcessed;
+  let rawAlbum;
+  let formattedAlbum;
 
   if (data) {
-    for (let i = 0; i < data.feed.entry.length; i++) {
-      albumRaw = data.feed.entry[i];
-
-      albumProcessed = {
-        rank: i + 1,
-        title: albumRaw["im:name"].label,
-        artist: {
-          name: albumRaw["im:artist"].label,
-          link: albumRaw["im:artist"].attributes?.href,
-        },
-        trackCount: albumRaw["im:itemCount"].label,
-        genre: albumRaw.category.attributes.label,
-        releaseDate: albumRaw["im:releaseDate"].label,
-        publisher: albumRaw.rights.label,
-        price: albumRaw["im:price"].label,
-        coverArt: albumRaw["im:image"][2].label,
-      };
-      chart.push(albumProcessed);
+    for (let rank = 1; rank <= data.feed.entry.length; rank++) {
+      rawAlbum = data.feed.entry[rank - 1];
+      formattedAlbum = formatRawAlbumData(rawAlbum, rank);
+      chart.push(formattedAlbum);
     }
   }
 
   return {
     chart,
+    isLoading: !error && !data,
+    isError: error,
+  };
+};
+
+export const useAlbum = (rank) => {
+  const { data, error } = useSWR(
+    `https://itunes.apple.com/us/rss/topalbums/limit=100/json`,
+    get
+  );
+
+  let formattedAlbum;
+  if (data) {
+    const rawAlbum = data.feed.entry[rank - 1];
+    formattedAlbum = formatRawAlbumData(rawAlbum, rank);
+  }
+
+  return {
+    album: formattedAlbum,
     isLoading: !error && !data,
     isError: error,
   };
