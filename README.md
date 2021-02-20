@@ -15,8 +15,8 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
  [x] List out to-dos
 
  [x] Create next app
- [x] Add tsconfig
- [ ] Add tailwindcss for styling
+ [x] Enable TypeScript
+ [x] Add tailwindcss for styling
  [ ] Create basic page/component structure
  [ ] Implement `<AlbumThumbnail>`
  [ ] Add swr for data caching/de-duplication
