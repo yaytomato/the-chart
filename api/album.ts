@@ -1,9 +1,11 @@
 import axios from "axios";
 import useSWR from "swr";
 
+import { Album } from "../types";
+
 const get = (url) => axios.get(url).then((res) => res.data);
 
-const formatRawAlbumData = (rawData, rank) => {
+const formatRawAlbumData = (rawData, rank): Album => {
   return {
     rank,
     title: rawData["im:name"].label,
@@ -20,9 +22,13 @@ const formatRawAlbumData = (rawData, rank) => {
   };
 };
 
-export const useTop100Chart = () => {
+export const useTop100Chart = (): {
+  chart: Album[];
+  isLoading: boolean;
+  isError: boolean;
+} => {
   const { data, error } = useSWR(
-    `https://itunes.apple.com/us/rss/topalbums/limit=101/json`,
+    `https://itunes.apple.com/us/rss/topalbums/limit=100/json`,
     get
   );
 
@@ -45,9 +51,11 @@ export const useTop100Chart = () => {
   };
 };
 
-export const useAlbum = (rank) => {
+export const useAlbum = (
+  rank
+): { album: Album; isLoading: boolean; isError: boolean } => {
   const { data, error } = useSWR(
-    `https://itunes.apple.com/us/rss/topalbums/limit=101/json`,
+    `https://itunes.apple.com/us/rss/topalbums/limit=100/json`,
     get
   );
 

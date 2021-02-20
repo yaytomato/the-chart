@@ -1,15 +1,10 @@
 import React from "react";
 import Link from "next/link";
 
+import { Album } from "../types";
+
 interface Props {
-  album: {
-    rank: number;
-    title: string;
-    artist: {
-      name: string;
-    };
-    coverArt: string;
-  };
+  album: Album;
 }
 
 export const AlbumThumbnail: React.FC<Props> = ({

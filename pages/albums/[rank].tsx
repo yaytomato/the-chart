@@ -30,6 +30,7 @@ export const Album: React.FC<Props> = ({ rank }) => {
         <div>
           <p>{album.title}</p>
           <a href={album.artist.link}>{album.artist.name}</a>
+          <p>현재 {rank}위</p>
         </div>
       </div>
 

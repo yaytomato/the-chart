@@ -35,8 +35,3 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
 * tailwindcss
 * swr
 * axios
-
-# Notes
-
-* Given API query returns only 99 top ranked albums
-So I updated the url from https://itunes.apple.com/us/rss/topalbums/limit=100/json to https://itunes.apple.com/us/rss/topalbums/limit=101/json
