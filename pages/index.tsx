@@ -15,7 +15,7 @@ const Top100Chart = ({ chart }) => (
 
     <div className="grid grid-cols-4">
       {chart.map((album) => (
-        <AlbumThumbnail album={album} />
+        <AlbumThumbnail key={album.rank} album={album} />
       ))}
     </div>
   </React.Fragment>
