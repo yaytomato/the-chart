@@ -11,7 +11,7 @@ interface Props {
 export const Top100Chart: React.FC<Props> = ({ chart }) => {
   return (
     <React.Fragment>
-      <p>Top 100 Chart</p>
+      <p className="heading">Top 100 Albums</p>
 
       <AlbumThumbnailList list={chart} />
     </React.Fragment>

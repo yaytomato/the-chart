@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        monoton: ["Monoton", "cursive"],
+        "spoqa-neo": ['"Spoqa Han Sans Neo"', "sans-serif"],
+      },
       spacing: {
         187: "46.75rem", // 748px
       },
