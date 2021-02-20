@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import AlbumThumbnail from "../components/AlbumThumbnail";
 
+import { useTop100Chart } from "../api/album";
+
 const Top100Chart = ({ chart }) => (
   <React.Fragment>
     <div className="flex">
@@ -22,27 +24,12 @@ const Top100Chart = ({ chart }) => (
 const SearchResult = ({ searched }) => <div>search result</div>;
 
 export const Home = () => {
-  // temp with fake data (will be replaced with swr hook)
-  const [chart, setChart] = useState([
-    {
-      rank: 1,
-      title: "25",
-      artist: {
-        name: "Adele",
-        link: "https://music.apple.com/us/artist/adele/262836961",
-      },
-      trackCount: 5,
-      genre: "Pop",
-      releaseDate: "2021-02-19T00:00:00-07:00",
-      publisher: "℗ 2021 Big Machine Label Group, LLC",
-      price: "$8.99",
-      coverArt:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5b/9b/bf/5b9bbf44-dc8a-9ee2-7e5c-42723a00fd74/21BMR0002226.rgb.jpg/170x170bb.png",
-    },
-  ]);
+  const { chart, isLoading, isError } = useTop100Chart();
 
   const [keyword, setKeyword] = useState("");
   const [searched, setSearched] = useState([]);
+
+  if (isLoading || isError) return null;
 
   return (
     <div>

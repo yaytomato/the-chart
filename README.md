@@ -21,9 +21,17 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
  [x] Implement `<AlbumThumbnail>`
  [x] Add swr for caching/data-depulication of fetched data
  [x] Add axios
- [ ] Create `useTop100Chart` swr hook and use it
+ [x] Create `useTop100Chart` swr hook and use it
  [ ] Implement /album/:id page
  [ ] Create `useAlbum` swr hook and use it
  [ ] Implement filtering
  [ ] Implement searching
  [ ] Implement navbar
+
+ [ ] Make container responsive
+
+# Used libraries
+
+* tailwindcss
+* swr
+* axios
