@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css");
 
+body {
+    @apply bg-gray text-mint;
+}
+
 @tailwind base;
 @tailwind components;
 
@@ -9,7 +13,7 @@
 }
 
 .heading {
-    @apply font-monoton text-6xl md:text-8xl;
+    @apply font-monoton text-6xl md:text-8xl text-white;
 }
 
 @tailwind utilities;

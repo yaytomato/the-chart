@@ -10,6 +10,11 @@ module.exports = {
       spacing: {
         187: "46.75rem", // 748px
       },
+      colors: {
+        white: "#fefcfe",
+        gray: "#beb9bc",
+        mint: "#739c8f",
+      },
     },
   },
   variants: {

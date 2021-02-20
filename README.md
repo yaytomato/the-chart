@@ -29,6 +29,7 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
  [x] Implement navbar
 
  [x] Make container responsive
+ [x] Add custom colors
  [ ] Apply style to <Top100Chart>
  [ ] Apply style to <AlbumThumbnail>
  [ ] Apply style to <SortOption>
