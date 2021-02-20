@@ -22,7 +22,7 @@ const formatRawAlbumData = (rawData, rank) => {
 
 export const useTop100Chart = () => {
   const { data, error } = useSWR(
-    `https://itunes.apple.com/us/rss/topalbums/limit=100/json`,
+    `https://itunes.apple.com/us/rss/topalbums/limit=101/json`,
     get
   );
 
@@ -47,7 +47,7 @@ export const useTop100Chart = () => {
 
 export const useAlbum = (rank) => {
   const { data, error } = useSWR(
-    `https://itunes.apple.com/us/rss/topalbums/limit=100/json`,
+    `https://itunes.apple.com/us/rss/topalbums/limit=101/json`,
     get
   );
 

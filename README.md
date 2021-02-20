@@ -24,7 +24,7 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
  [x] Create `useTop100Chart` swr hook and use it
  [x] Implement /albums/[rank] page
  [x] Create `useAlbum(rank)` swr hook and use it
- [ ] Implement filtering
+ [x] Implement several sort options
  [ ] Implement searching
  [ ] Implement navbar
 
@@ -35,3 +35,8 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
 * tailwindcss
 * swr
 * axios
+
+# Notes
+
+* Given API query returns only 99 top ranked albums
+So I updated the url from https://itunes.apple.com/us/rss/topalbums/limit=100/json to https://itunes.apple.com/us/rss/topalbums/limit=101/json
