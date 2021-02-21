@@ -29,16 +29,22 @@ select::-ms-expand {
 @tailwind base;
 @tailwind components;
 
+/* global */
 .responsive-container {
     @apply w-full px-5 md:w-182 md:px-0 md:mx-auto;
 }
 
+.artist-name {
+    @apply mt-1 text-sm uppercase text-black;
+}
+
+/* home */
 .heading {
-    @apply font-monoton text-6xl md:text-8xl text-white mt-8 mb-12;
+    @apply font-monoton text-6xl md:text-8xl text-white mt-8;
 }
 
 .album-thumbnail-list {
-    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 md:gap-8 mb-20;
+    @apply mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 md:gap-8 mb-20;
 }
 
 .album-thumbnail {
@@ -49,16 +55,16 @@ select::-ms-expand {
     @apply absolute top-0 ml-2 mt-2 text-2xl italic text-white underline;
 }
 
-.artist-name {
-    @apply mt-1 text-sm uppercase text-black;
-}
-
 .sort-option-btn {
     @apply w-40 bg-gray border border-mint mr-3 p-3 rounded-full;
 }
 
 .search-bar {
     @apply w-1/2 bg-gray border-b border-mint px-4 text-right;
+}
+
+.no-search-result {
+    @apply mt-20 text-center text-white;
 }
 
 @tailwind utilities;

@@ -13,7 +13,7 @@ export const SearchResult: React.FC<Props> = ({ searched }) => {
     return <AlbumThumbnailList list={searched} />;
   }
 
-  return <div>일치하는 앨범이 없습니다. 오타는 없었나요?</div>;
+  return <div className="no-search-result">일치하는 앨범이 없네요. 오타는 없었나요?</div>;
 };
 
 export default SearchResult;
