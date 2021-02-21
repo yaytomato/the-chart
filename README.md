@@ -1,3 +1,14 @@
+![screenshot](./screenshot.png);
+
+# How to run
+
+```bash
+yarn install
+yarn dev
+```
+
+Then go to http://localhost:3000 in the browser
+
 # Objective
 
 Create a website that displays Top 100 albums chart in a modern and sleek manner.
@@ -41,3 +52,4 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
 * tailwindcss
 * swr
 * axios
+* moment
