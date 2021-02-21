@@ -24,7 +24,7 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
 * [x] Draw out simple layout mockups (in paper)
 * [x] Decide on a design concept/color theme
 * [x] List out to-dos
-
+---
 * [x] Create next app
 * [x] Enable TypeScript
 * [x] Add tailwindcss for styling
@@ -38,7 +38,7 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
 * [x] Implement several sort options
 * [x] Implement searching
 * [x] Implement navbar
-
+---
 * [x] Make container responsive
 * [x] Add custom colors
 * [x] Apply style to `<Top100Chart>`
@@ -46,7 +46,8 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
 * [x] Apply style to `<SortOption>`
 * [x] Apply style to `<SearchBar>`
 * [x] Apply style to /albums/[rank] page
-
+---
+* [x] Add hover to `<AlbumThumbnail>` style
 # Used libraries
 
 - tailwindcss

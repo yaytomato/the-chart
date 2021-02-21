@@ -11,6 +11,7 @@
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "autoprefixer": "^9",
     "axios": "^0.21.1",
+    "framer-motion": "^3.6.2",
     "moment": "^2.29.1",
     "next": "10.0.7",
     "postcss": "^7",

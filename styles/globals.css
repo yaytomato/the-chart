@@ -59,6 +59,10 @@ select::-ms-expand {
     @apply relative w-full bg-white rounded-lg text-right overflow-hidden;
 }
 
+.album-thumbnail:hover {
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
 .album-thumbnail .rank {
     @apply absolute top-0 ml-2 mt-2 text-2xl italic text-white underline;
 }
