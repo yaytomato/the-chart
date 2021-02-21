@@ -41,7 +41,7 @@ export const SortOption: React.FC<Props> = ({ chart, setSortedChart }) => {
   }, [selected]);
 
   return (
-    <select onChange={(e) => setSelected(e.target.value)}>
+    <select onChange={(e) => setSelected(e.target.value)} className="sort-option-btn">
       <option value="rank ASC">랭킹순 (오름차순)</option>
       <option value="rank DESC">랭킹순 (내림차순)</option>
       <option value="title ASC">앨범명순 (오름차순)</option>

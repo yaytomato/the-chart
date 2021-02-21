@@ -20,7 +20,7 @@ export const Home = () => {
   return (
     <div className="responsive-container">
       <NavBar />
-      <div className="flex">
+      <div className="flex justify-between">
         <SortOption chart={chart} setSortedChart={setSortedChart} />
         <SearchBar keyword={keyword} setKeyword={setKeyword} />
       </div>

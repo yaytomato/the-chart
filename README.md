@@ -32,8 +32,9 @@ Create a website that displays Top 100 albums chart in a modern and sleek manner
  [x] Add custom colors
  [x] Apply style to <Top100Chart>
  [x] Apply style to <AlbumThumbnail>
- [ ] Apply style to <SortOption>
- [ ] Apply style to <SearchBar>
+ [x] Apply style to <SortOption>
+ [x] Apply style to <SearchBar>
+ [ ] Apply style to /albums/[rank] page
 
 # Used libraries
 

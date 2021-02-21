@@ -5,6 +5,27 @@ body {
     @apply bg-gray text-mint;
 }
 
+input:focus,
+button:focus,
+input:active {
+    outline: none;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+select::-ms-expand {
+    display: none;
+}
+
 @tailwind base;
 @tailwind components;
 
@@ -30,6 +51,14 @@ body {
 
 .artist-name {
     @apply mt-1 text-sm uppercase text-black;
+}
+
+.sort-option-btn {
+    @apply w-40 bg-gray border border-mint mr-3 p-3 rounded-full;
+}
+
+.search-bar {
+    @apply w-1/2 bg-gray border-b border-mint px-4 text-right;
 }
 
 @tailwind utilities;
