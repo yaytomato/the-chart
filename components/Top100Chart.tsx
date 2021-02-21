@@ -8,14 +8,8 @@ interface Props {
   chart: Album[];
 }
 
-export const Top100Chart: React.FC<Props> = ({ chart }) => {
-  return (
-    <React.Fragment>
-      <p className="heading">Top 100 Albums</p>
-
-      <AlbumThumbnailList list={chart} />
-    </React.Fragment>
-  );
-};
+export const Top100Chart: React.FC<Props> = ({ chart }) => (
+  <AlbumThumbnailList list={chart} />
+);
 
 export default Top100Chart;

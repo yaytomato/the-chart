@@ -2,8 +2,7 @@ import Head from "next/head";
 import React, { useState } from "react";
 
 import NavBar from "../components/NavBar";
-import SearchBar from "../components/SearchBar";
-import SortOption from "../components/SortOption";
+import Utils from "../components/Utils";
 import Top100Chart from "../components/Top100Chart";
 import SearchResult from "../components/SearchResult";
 
@@ -20,10 +19,15 @@ export const Home = () => {
   return (
     <div className="responsive-container">
       <NavBar />
-      <div className="flex justify-between">
-        <SearchBar keyword={keyword} setKeyword={setKeyword} />
-        <SortOption chart={chart} setSortedChart={setSortedChart} />
-      </div>
+
+      <p className="heading">Top 100 Chart</p>
+
+      <Utils
+        keyword={keyword}
+        setKeyword={setKeyword}
+        chart={chart}
+        setSortedChart={setSortedChart}
+      />
 
       {keyword.length ? (
         <SearchResult

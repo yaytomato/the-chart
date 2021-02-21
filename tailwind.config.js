@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        monoton: ["Monoton", "cursive"],
+        monoton: ["Monoton", "serif"],
         "spoqa-neo": ['"Spoqa Han Sans Neo"', "sans-serif"],
       },
       spacing: {

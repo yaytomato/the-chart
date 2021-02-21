@@ -7,7 +7,8 @@ body {
 
 input:focus,
 button:focus,
-input:active {
+input:active,
+select {
     outline: none;
 }
 
@@ -56,7 +57,7 @@ select::-ms-expand {
 }
 
 .album-thumbnail {
-    @apply relative w-full bg-white rounded-lg text-right overflow-hidden;
+    @apply cursor-pointer relative w-full bg-white rounded-lg text-right overflow-hidden;
 }
 
 .album-thumbnail:hover {
