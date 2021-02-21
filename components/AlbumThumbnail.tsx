@@ -20,7 +20,7 @@ export const AlbumThumbnail: React.FC<Props> = ({
   return (
     <Link href={`/albums/${rank}`}>
       <a className="album-thumbnail">
-        <img src={coverArt} alt={title} className="w-full rounded-b-full" />
+        <img src={coverArt} alt={title} className="w-full rounded-b-full md:h-42.5" />
         <p className="rank">{rank}</p>
 
         <div className="mt-2 mb-4 mx-3">

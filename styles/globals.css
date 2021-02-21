@@ -75,4 +75,21 @@ select::-ms-expand {
     @apply mt-20 text-center text-white;
 }
 
+/* /albums/[rank] */
+table tr {
+    @apply border-b border-mint;
+}
+
+table tr td {
+    @apply py-2;
+}
+
+table tr td:first-child {
+    @apply font-semibold;
+}
+
+table tr td:last-child {
+    @apply text-right text-white;
+}
+
 @tailwind utilities;
