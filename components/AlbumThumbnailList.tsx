@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const AlbumThumbnailList: React.FC<Props> = ({ list }) => (
-  <div className="grid grid-cols-4">
+  <div className="album-thumbnail-list">
     {list.map((album) => (
       <AlbumThumbnail key={album.rank} album={album} />
     ))}

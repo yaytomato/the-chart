@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css");
 
 body {
@@ -9,11 +9,27 @@ body {
 @tailwind components;
 
 .responsive-container {
-    @apply w-full px-5 md:w-187 md:px-0 md:mx-auto;
+    @apply w-full px-5 md:w-182 md:px-0 md:mx-auto;
 }
 
 .heading {
-    @apply font-monoton text-6xl md:text-8xl text-white mt-4 mb-8;
+    @apply font-monoton text-6xl md:text-8xl text-white mt-8 mb-12;
+}
+
+.album-thumbnail-list {
+    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 md:gap-8 mb-20;
+}
+
+.album-thumbnail {
+    @apply relative w-full bg-white rounded-lg text-right overflow-hidden;
+}
+
+.album-thumbnail .rank {
+    @apply absolute top-0 ml-2 mt-2 text-2xl italic text-white underline;
+}
+
+.artist-name {
+    @apply mt-1 text-sm uppercase text-black;
 }
 
 @tailwind utilities;

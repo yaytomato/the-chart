@@ -8,7 +8,8 @@ module.exports = {
         "spoqa-neo": ['"Spoqa Han Sans Neo"', "sans-serif"],
       },
       spacing: {
-        187: "46.75rem", // 748px
+        ["42.5"]: "10.625rem", // 170px
+        182: "45.5rem", // 728px
       },
       colors: {
         white: "#fefcfe",
