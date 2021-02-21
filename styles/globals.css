@@ -34,6 +34,14 @@ select::-ms-expand {
     @apply w-full px-5 md:w-182 md:px-0 md:mx-auto;
 }
 
+.nav-bar {
+    @apply mt-10 mb-8 flex justify-between;
+}
+
+.nav-bar .logo {
+    @apply font-semibold italic font-serif underline;
+}
+
 .artist-name {
     @apply mt-1 text-sm uppercase text-black;
 }
@@ -56,11 +64,11 @@ select::-ms-expand {
 }
 
 .sort-option-btn {
-    @apply w-40 bg-gray border border-mint mr-3 p-3 rounded-full;
+    @apply text-center w-40 bg-gray border border-mint mr-3 px-3 py-1 rounded-full;
 }
 
 .search-bar {
-    @apply w-1/2 bg-gray border-b border-mint px-4 text-right;
+    @apply w-1/2 border border-mint px-3 py-1;
 }
 
 .no-search-result {

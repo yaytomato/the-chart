@@ -7,9 +7,9 @@ interface Props {
 
 export const NavBar: React.FC<Props> = ({ toChart }) => {
   return (
-    <div className="flex">
+    <div className="nav-bar">
       <Link href="/">
-        <a>the chart</a>
+        <a className="logo">the chart</a>
       </Link>
       {toChart ? (
         <Link href="/">
