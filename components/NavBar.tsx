@@ -13,7 +13,7 @@ export const NavBar: React.FC<Props> = ({ toChart }) => {
       </Link>
       {toChart ? (
         <Link href="/">
-          <a>← 차트 보기</a>
+          <a className="text-white font-bold">← 차트 보기</a>
         </Link>
       ) : null}
     </div>

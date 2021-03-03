@@ -81,8 +81,22 @@ select::-ms-expand {
 }
 
 /* /albums/[rank] */
+.album-preview {
+    @apply flex justify-between w-full h-42.5 items-center bg-white rounded-r-md;
+    border-top-left-radius: 85px;
+    border-bottom-left-radius: 85px;
+}
+
+.album-preview img {
+    @apply rounded-l-full;
+}
+
+table {
+    @apply mx-4;
+}
+
 table tr {
-    @apply border-b border-mint;
+    @apply border-t border-mint;
 }
 
 table tr td {
@@ -90,7 +104,7 @@ table tr td {
 }
 
 table tr td:first-child {
-    @apply font-semibold;
+    @apply w-20 font-semibold;
 }
 
 table tr td:last-child {
