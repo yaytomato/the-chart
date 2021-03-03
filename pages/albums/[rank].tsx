@@ -3,45 +3,37 @@ import moment from "moment";
 
 import NavBar from "../../components/NavBar";
 
-import { useAlbum } from "../../api/album";
-
-export const getServerSideProps = async (context) => {
-  const { rank } = context.query;
-  return {
-    props: {
-      rank,
-    },
-  };
-};
+import { getAlbum } from "../../api/album";
+import { Album as AlbumType } from "../../types";
 
 interface Props {
   rank: string;
+  album: AlbumType;
 }
 
-export const Album: React.FC<Props> = ({ rank }) => {
-  const { album, isLoading, isError } = useAlbum(rank);
-
-  if (isLoading || isError) return null;
-
+export const Album: React.FC<Props> = ({ rank, album }) => {
   return (
     <div className="responsive-container">
       <NavBar toChart />
-      <div className="flex justify-between items-center bg-mint rounded-lg p-4">
+      <div className="album-preview">
         <img
           src={album.coverArt}
           alt={album.title}
-          className="rounded-full h-30 sm:h-42.5"
+          className=" h-30 sm:h-42.5"
         />
-        <div className="text-white text-right">
+        <div className="p-4 text-right">
           <p className="text-3xl">{album.title}</p>
-          <a href={album.artist.link} className="uppercase underline">
+          <a
+            href={album.artist.link}
+            className="block mt-1 uppercase font-semibold text-sm text-black"
+          >
             {album.artist.name}
           </a>
-          <p className="mt-4 text-sm text-black">현재 {rank}위</p>
         </div>
       </div>
 
-      <table className="mt-4 w-full">
+      <p className="mt-8 mb-2 text-sm text-black">현재 {rank}위</p>
+      <table className="w-full">
         <tbody>
           <tr>
             <td>트랙 수</td>
@@ -68,5 +60,15 @@ export const Album: React.FC<Props> = ({ rank }) => {
     </div>
   );
 };
+
+export async function getServerSideProps({ params: { rank } }) {
+  const album = await getAlbum(rank);
+  return {
+    props: {
+      rank,
+      album,
+    },
+  };
+}
 
 export default Album;

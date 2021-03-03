@@ -6,15 +6,11 @@ import Utils from "../components/Utils";
 import Top100Chart from "../components/Top100Chart";
 import SearchResult from "../components/SearchResult";
 
-import { useTop100Chart } from "../api/album";
+import { getTop100Chart } from "../api/album";
 
-export const Home = () => {
-  const { chart, isLoading, isError } = useTop100Chart();
-
+export const Home = ({ chart }) => {
   const [sortedChart, setSortedChart] = useState(chart);
   const [keyword, setKeyword] = useState("");
-
-  if (isLoading || isError) return null;
 
   return (
     <div className="responsive-container">
@@ -41,5 +37,10 @@ export const Home = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const chart = await getTop100Chart();
+  return { props: { chart } };
+}
 
 export default Home;

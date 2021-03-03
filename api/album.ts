@@ -1,9 +1,6 @@
 import axios from "axios";
-import useSWR from "swr";
 
 import { Album } from "../types";
-
-const get = (url) => axios.get(url).then((res) => res.data);
 
 const formatRawAlbumData = (rawData, rank): Album => {
   return {
@@ -11,7 +8,7 @@ const formatRawAlbumData = (rawData, rank): Album => {
     title: rawData["im:name"].label,
     artist: {
       name: rawData["im:artist"].label,
-      link: rawData["im:artist"].attributes?.href,
+      link: rawData["im:artist"].attributes?.href || null,
     },
     trackCount: rawData["im:itemCount"].label,
     genre: rawData.category.attributes.label,
@@ -22,52 +19,27 @@ const formatRawAlbumData = (rawData, rank): Album => {
   };
 };
 
-export const useTop100Chart = (): {
-  chart: Album[];
-  isLoading: boolean;
-  isError: boolean;
-} => {
-  const { data, error } = useSWR(
-    `https://itunes.apple.com/us/rss/topalbums/limit=100/json`,
-    get
+export const getTop100Chart = async () => {
+  const { data } = await axios.get(
+    "https://itunes.apple.com/us/rss/topalbums/limit=100/json"
   );
-
   const chart = [];
   let rawAlbum;
   let formattedAlbum;
-
-  if (data) {
-    for (let rank = 1; rank <= data.feed.entry.length; rank++) {
-      rawAlbum = data.feed.entry[rank - 1];
-      formattedAlbum = formatRawAlbumData(rawAlbum, rank);
-      chart.push(formattedAlbum);
-    }
+  for (let rank = 1; rank <= data.feed.entry.length; rank++) {
+    rawAlbum = data.feed.entry[rank - 1];
+    formattedAlbum = formatRawAlbumData(rawAlbum, rank);
+    chart.push(formattedAlbum);
   }
-
-  return {
-    chart,
-    isLoading: !error && !data,
-    isError: error,
-  };
+  console.log(chart);
+  return chart;
 };
 
-export const useAlbum = (
-  rank
-): { album: Album; isLoading: boolean; isError: boolean } => {
-  const { data, error } = useSWR(
-    `https://itunes.apple.com/us/rss/topalbums/limit=100/json`,
-    get
+export const getAlbum = async (rank: number) => {
+  const { data } = await axios.get(
+    "https://itunes.apple.com/us/rss/topalbums/limit=100/json"
   );
 
-  let formattedAlbum;
-  if (data) {
-    const rawAlbum = data.feed.entry[rank - 1];
-    formattedAlbum = formatRawAlbumData(rawAlbum, rank);
-  }
-
-  return {
-    album: formattedAlbum,
-    isLoading: !error && !data,
-    isError: error,
-  };
+  const rawAlbum = data.feed.entry[rank - 1];
+  return formatRawAlbumData(rawAlbum, rank);
 };
