@@ -1,6 +1,6 @@
-![screenshot](./screenshot.png)
+[Go to demo](https://the-chart.vercel.app/)
 
-[Demo](https://the-chart.vercel.app/)
+![screenshot](./screenshot.png)
 
 # How to run
 
