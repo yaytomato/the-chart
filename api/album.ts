@@ -23,15 +23,10 @@ export const getTop100Chart = async () => {
   const { data } = await axios.get(
     "https://itunes.apple.com/us/rss/topalbums/limit=100/json"
   );
-  const chart = [];
-  let rawAlbum;
-  let formattedAlbum;
-  for (let rank = 1; rank <= data.feed.entry.length; rank++) {
-    rawAlbum = data.feed.entry[rank - 1];
-    formattedAlbum = formatRawAlbumData(rawAlbum, rank);
-    chart.push(formattedAlbum);
-  }
-  console.log(chart);
+
+  const chart = data.feed.entry.map((rawAlbum, i) => {
+    return formatRawAlbumData(rawAlbum, i + 1);
+  });
   return chart;
 };
 
