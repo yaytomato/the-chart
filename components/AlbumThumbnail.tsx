@@ -11,13 +11,6 @@ interface Props {
 export const AlbumThumbnail: React.FC<Props> = ({
   album: { coverArt, title, rank, artist },
 }) => {
-  const shorten = (value) => {
-    if (value.length > 20) {
-      return `${value.substring(0, 20)}...`;
-    }
-    return value;
-  };
-
   return (
     <Link href={`/albums/${rank}`}>
       <motion.a
@@ -35,8 +28,8 @@ export const AlbumThumbnail: React.FC<Props> = ({
         <p className="rank">{rank}</p>
 
         <div className="mt-2 mb-4 mx-3">
-          <p className="text-xl">{shorten(title)}</p>
-          <p className="artist-name">{shorten(artist.name)}</p>
+          <p className="text-xl ellipsis">{title}</p>
+          <p className="artist-name ellipsis">{artist.name}</p>
         </div>
       </motion.a>
     </Link>

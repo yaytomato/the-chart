@@ -111,4 +111,10 @@ table tr td:last-child {
     @apply text-right text-white;
 }
 
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 @tailwind utilities;
