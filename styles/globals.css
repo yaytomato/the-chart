@@ -92,7 +92,7 @@ select::-ms-expand {
 }
 
 table {
-    @apply mx-4;
+    @apply px-4;
 }
 
 table tr {
