@@ -28,7 +28,7 @@ export const Home = ({ chart }) => {
       {keyword.length ? (
         <SearchResult
           searched={sortedChart.filter((album) =>
-            album.title.includes(keyword)
+            album.title.toLowerCase().includes(keyword.toLowerCase())
           )}
         />
       ) : (
